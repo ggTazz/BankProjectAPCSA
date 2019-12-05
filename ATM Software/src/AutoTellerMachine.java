@@ -1,3 +1,5 @@
+//Customer Team needs to make OBJECT VARIABLES for each customer
+
 import java.util.Scanner;
 public class AutoTellerMachine {
 	public static void main(String[] args){
@@ -23,7 +25,7 @@ public class AutoTellerMachine {
 	}
 	public class ATMFunctions{
 		
-		public double Withdrawal{
+		static void Withdrawal(){
 			
 			/*CustomerBalance*/ = /*CustomerBalance*/ - userInput.nextDouble();
 			System.out.println("Withdrawal Complete! Your Balance is now " + /*CustomerBalance*/);
@@ -33,7 +35,7 @@ public class AutoTellerMachine {
 				System.out.println("What sort of Transaction would you like to Perform?");
 			}
 		}
-		public double Deposit{
+		static void Deposit(){
 			
 			/*CustomerBalance*/ = /*CustomerBalance*/ + userInput.nextDouble();
 		}
