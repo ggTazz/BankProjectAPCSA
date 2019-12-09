@@ -1,18 +1,20 @@
 //you can connect java files using the "extends" command in the public class.
 //or by making it an object
-//make back button
+
 
 import java.util.Scanner;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import Employees.EmployeesData;
-
 import java.io.FileNotFoundException;
 import java.lang.Math;
 
-//ISSUES 12/4
-//Having a hard time importing another class
+//ISSUES 12/9
+//need to optimize code. I doubt copying and pasting code is what to do.
+//Find a way to have the time update.
 
 public class Bank{
-
 	public static void main(String[] args) {
 		
 		Scanner UserInput = new Scanner(System.in);
@@ -24,73 +26,86 @@ public class Bank{
 		int range = maxBranchNumber - minBranchNumber + 1;
 		int branchNumber = (int)(Math.random() * range) + minBranchNumber;
 		
-		/*
-		 //Selection
-		int select = 0;
-		System.out.println("Welcome to the Bank of OB! Our Branch Number is " + branchNumber + "!");
-		System.out.println("Press Enter to Start!");
-		try{        System.in.read();}catch(Exception e){   e.printStackTrace();}
-		select = 1;
-		if (select == 1); {
-		System.out.println("What do you want to do?");
-		System.out.println("Press 1 for Account Information. Press 2 for Employee Data.");
-		//ISSUE When choosing an option, it displays both options regardless. 
-		int input = UserInput2.nextInt();
-			if (input == 1);{
-				System.out.println(TheBank.getAccounts());
-				select = 2;
-			}
-			if (input ==  2);{
-				System.out.println(Employees.ED);
-				select = 2;
-			}
-		}
-		*/
+		//Time
+		LocalTime time = LocalTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm a");
 		
 		//Page Selection 
 				int loop = -99;
 				
-				System.out.println("JoeStromboli");
 				System.out.println("Welcome to the Bank of OB! Our Branch Number is " + branchNumber + "!");
 				System.out.println("Press Enter to Start!");
 				try{        System.in.read();}catch(Exception e){   e.printStackTrace();}
 				System.out.println("Please type the name of the page you wish to go to.");
+				System.out.println("The time is " + time.format(formatter));
 				System.out.println("Press Help for Commands.");
 			while (loop == -99) {
 				
 				String page = UserInput2.nextLine();
 			if (page.equalsIgnoreCase("Home")) {
-				System.out.println("JoeStromboli");
 				System.out.println("Welcome to the Bank of OB! Our Branch Number is " + branchNumber + "!");
 				System.out.println("Press Enter to Start!");
 				try{        System.in.read();}catch(Exception e){   e.printStackTrace();}
 				System.out.println("Please type the name of the page you wish to go to.");
+				System.out.println("The time is " + time.format(formatter));
 				System.out.println("Press Help for Commands.");
 			}
 				
 			if (page.equalsIgnoreCase("Accounts")) {
-				System.out.println(TheBank.getAccounts());
-				System.out.println("Please type the name of the page you wish to go to.");
-			}
+				System.out.println("Do you want to create a Checking or Savings Account?");
+				String AccountDecision = UserInput.nextLine();
+					if(AccountDecision.equalsIgnoreCase("Checking") || AccountDecision.equalsIgnoreCase("Checking Account")) {
+						System.out.println("Checking Account"); //Placeholder
+						System.out.println("Please type the name of the page you wish to go to.");
+						System.out.println("The time is " + time.format(formatter));
+						System.out.println("Press Help for Commands.");
+					}
+					if(AccountDecision.equalsIgnoreCase("Savings") || AccountDecision.equalsIgnoreCase("Savings Account")) {
+						System.out.println("Account Number is: " + Accounts.getAccountNumber());
+						System.out.println("Please type the name of the page you wish to go to.");
+						System.out.println("Press Help for Commands.");
+					}
+				}
 			if (page.equalsIgnoreCase("ATM")) {
 				System.out.println(TheBank.ATM());
 				System.out.println("Please type the name of the page you wish to go to.");
+				System.out.println(time.format(formatter));
+				System.out.println("Press Help for Commands.");
 			}
 			if (page.equalsIgnoreCase("Customer")) {
 				System.out.println(TheBank2.Customer());
 				System.out.println("Please type the name of the page you wish to go to.");
+				System.out.println(time.format(formatter));
+				System.out.println("Press Help for Commands.");
 			}
 			if (page.equalsIgnoreCase("Papa John")) {
 				System.out.println(TheBank.getPPP());
 				System.out.println("Please type the name of the page you wish to go to.");
+				System.out.println(time.format(formatter));
+				System.out.println("Press Help for Commands.");
 			}
-			if (page.equalsIgnoreCase("getStuff")) {
+			if (page.equalsIgnoreCase("Mom Gat")) {
 				System.out.println(TheBank.getMomGat());
 				System.out.println("Please type the name of the page you wish to go to.");
+				System.out.println(time.format(formatter));
+				System.out.println("Press Help for Commands.");
+			}
+			if (page.equalsIgnoreCase("Investment")) {
+				System.out.println(HedgeFunds.HF);
+				System.out.println("Please type the name of the page you wish to go to.");
+				System.out.println(time.format(formatter));
+				System.out.println("Press Help for Commands.");
 			}
 			if (page.equalsIgnoreCase("Employee Data")) {
 				System.out.println(Employees.ED);
 				System.out.println("Please type the name of the page you wish to go to.");
+				System.out.println(time.format(formatter));
+				System.out.println("Press Help for Commands.");
+			}
+			if (page.equalsIgnoreCase("Time")) {
+				System.out.println("The time is " + time.format(formatter));
+				System.out.println("Please type the name of the page you wish to go to.");
+				System.out.println("Press Help for Commands.");
 			}
 			if (page.equalsIgnoreCase("Help")) {
 				System.out.println("Accounts - Takes you to the Accounts page.");
@@ -98,24 +113,17 @@ public class Bank{
 				System.out.println("Papa John - Pizza Pasta BB.");
 				System.out.println("ATM - Takes you to the ATM page.");
 				System.out.println("Home -  Takes you back to the main menu.");
+				System.out.println("Investment -  Takes you to the Investment Page.");
+				System.out.println("Time - What do you think?");
 				System.out.println("End,Exit,Stop - What do you think?");
 				System.out.println(" ");
 				System.out.println("Please type the name of the page you wish to go to.");
 			}
+			
 			if (page.equalsIgnoreCase("End") || page.equalsIgnoreCase("Exit") || page.equalsIgnoreCase("Stop"))
 				break;
 			}
 		
-		
-		
-		//OUTPUTs
-		//System.out.println(TheBank.getAccounts());
-		//System.out.println(TheBank.ATM());
-		//System.out.println(TheBank2.Customer());
-		//System.out.println(TheBank.getPeepeePooPoo());
-		//System.out.println(TheBank.getMomGat());
-		//System.out.println(TheBank2.pepop());						
-		//System.out.println(System.currentTimeMillis());
 		
 		//SEPERATE CLASSES(Mostly Test Classes)
 	}
@@ -141,19 +149,70 @@ public class Bank{
 			return Test2.volume;
 		}
 	}
-		//EMPLOYEES
+		
+	//EMPLOYEES (WIP)
 	static class Employees{
-	static EmployeesData ED = new EmployeesData(); {
-			try {
-				ED.FileNotFoundException();
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+	static EmployeesData ED = new EmployeesData();{
 			
-			ED.getInfo(ED.sc, ED.key);
 	}
+	}
+	
+	//INVESTMENT
+	//Trying to find a way to shorten/optimize code.
+	//Don't invest for 1000 years!
+	static class HedgeFunds{
+		static HedgeFunds HF = new HedgeFunds();{
+			Scanner in = new Scanner(System.in); 
+		    System.out.print("  <><><>Welcome To The Investment Division!<><><>  \n");
+		    System.out.print("Input the amount you wish to invest: $");  //Input the amount you wish to invest
+		 	double investment = in.nextDouble();
+			double rate = 0.2;
+			System.out.print("Input number of years you wish to invest: ");  //Input the # of years you wish to invest
+			int year = in.nextInt();
+			
+			rate *= 0.2;
+			
+			System.out.println("Year(s)         FutureValue");
+			for(int i = 1; i <= year; i++) {
+		    	int formatter = 19;
+			    if (i >= 10) formatter = 18;
+				System.out.printf(i + "%"+formatter+".2f\n", futureInvestmentValue(investment, rate/12, i));
+		       }
+		}
+		public static double futureInvestmentValue(double investmentAmount, double monthlyInterestRate, int years) {
+		return investmentAmount * Math.pow(1 + monthlyInterestRate, years * 12);
+		}
+	}
+	
+	//ACCOUNTS (WIP)
+	static class Accounts{
+		static SavingsAccount SA = new SavingsAccount();{
+			double balance;
+			String accountNumber;
+			double withdrawl;
+			double accountBalance, deposit;
+				 String[] accounts = {"12345", "45678"};
+					   accountNumber = Accounts.getAccountNumber();
+					System.out.println("Account Number is: " + accountNumber);
+		}
+				public static String getAccountNumber(){
+					   Scanner myscanner = new Scanner(System.in);
+					   System.out.print("Enter Account Number: ");
+					        String enteredAccountNumber = myscanner.nextLine();
+					        return enteredAccountNumber;
+					        }
+				public static boolean checkAccountExists(String accNr){
+					   boolean accountExist = false;
+					   return accountExist;
+					   }
+				public static void setAccountNumber(String accNr){   
+				}
+				
 	}
 }
 
+	
+	
+	
+	
 

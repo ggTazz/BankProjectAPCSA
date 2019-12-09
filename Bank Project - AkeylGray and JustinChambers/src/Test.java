@@ -5,5 +5,6 @@ public class Test {
 	public static int testNumber = 5;
 	public static int testNumber2 = 99;
 	public static double testNumber4 = 99.999;
-	public static String hi = "hi";
-}
+	public static String hi;
+		String haha = "Haha";
+	}
