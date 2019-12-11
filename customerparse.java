@@ -9,24 +9,23 @@ import java.util.Scanner;
 public class customerparse { 
 
 	static ArrayList<customer> list = new ArrayList<customer>(100);
+	private static Scanner s;
 	
 	public static void main( String [] args) {
 		
 		Scanner input = new Scanner(System.in);
 		
-		int answer;
-		String enterUsername;
-		String enterPassword;
-		String name, address, username, password;
-		int atmPin;
+		String enterUsername, name, address, username, password, enterPassword, mainPage, enter, words;
+		int atmPin, answer, i = 0, xx, xy;
 		double DOB, phoneNumber;
-		int i = 0;
-		String mainPage;
 		
+		safeBoxes.sload();
 		load();
 		
-		do {
 		
+		
+		do {
+			
 			System.out.println("Welcome to the bank.\n");
 			System.out.println("(1) Sign in");
 			System.out.println("(2) Create new account\n");
@@ -44,13 +43,58 @@ public class customerparse {
 				
 				if (verify(enterUsername, enterPassword) == true) {
 					System.out.println("\nSuccessfully logged in.\n");
+					
+					System.out.println("(1) Buy Safety Deposit Box");
+					System.out.println("(2) Access Safety Deposit Box\n");
+					
+					answer = input.nextInt();
+					
+					if (answer == 1) {
+						
+						ArrayList<String> ran = new ArrayList<String>(100);
+						
+						System.out.println("\nDeposit (Item,Item,etc.)\n");
+						
+						enter = input.next();
+						
+						
+						s = new Scanner(enter);
+						s.useDelimiter("[,\n]");
+						
+						while(s.hasNext()) {
+							words = s.next().trim();
+							ran.add(words);
+						}
+						safeBoxes.addUser(enterUsername, ran);
+						System.out.println("\nYour box number is " + (safeBoxes.saver.size() - 1) + " and your code is "
+						+ safeBoxes.tempCode);
+						
+					}
+					
+					else if (answer == 2) {
+						
+						System.out.print("\nBox number: ");
+						xx = input.nextInt();
+					
+						System.out.print("\nBox code: ");
+						xy = input.nextInt();		
+						
+						if (safeBoxes.verifyboxID(xx, xy) == true) {
+							System.out.println("\nBox Open\n");
+						}
+						else {
+							System.out.println("\nBox combination incorrect\n");
+						}
+						
+					}
+					
 				}
 				else {
 					System.out.println("\nUsername or Password is Incorrect\n");
 				}
 			
 			}
-		
+
 			else if (answer == 2) {
 			
 				System.out.print("\nName (First Last) : ");
@@ -86,7 +130,7 @@ public class customerparse {
 				
 			}
 		
-			System.out.println("Return to pain page? (Y / N)");
+			System.out.println("Return to main page? (Y / N)");
 			mainPage = input.next();
 			System.out.println();
 			
@@ -94,6 +138,7 @@ public class customerparse {
 	
 		input.close();
 		save();
+		safeBoxes.ssave();
 	}	
 	
 	public static void save() {
@@ -181,84 +226,5 @@ public class customerparse {
 		 return false;
 		
 	}
-	
-}
-
-class customer {
-	
-	public customer() {
-		
-		myName = "";
-		myAddress = "";
-		myDOB = 0;
-		myphoneNumber = 0;
-		myatmPin = 0;
-		myUsername = "";
-		myPassword = "";
-		
-	}
-
-	public customer(String name, String address, double DOB, double phoneNumber, int atmPin, String username, String password) {
-		
-		myName = name;
-		myAddress = address;
-		myDOB = DOB;
-		myphoneNumber = phoneNumber;
-		myatmPin = atmPin;
-		myUsername = username;
-		myPassword = password;
-		
-	}
-	
-	//getter setter open
-	
-	public String getName() {
-		return myName;
-	}
-	public void setName(String Name) {
-		myName = Name;
-	}
-	public String getAddress() {
-		return myAddress;
-	}
-	public void setAddress(String address) {
-		myAddress = address;
-	}
-	public double getDOB() {
-		return myDOB;
-	}
-	public void setDOB(double DOB) {
-		myDOB = DOB;
-	}
-	public double getphoneNumber() {
-		return myphoneNumber;
-	}
-	public void setphoneNumber(double phoneNumber) {
-		myphoneNumber = phoneNumber;
-	}
-	public int getAtmPin() {
-		return myatmPin;
-	}
-	public void setAtmPin(int atmPin) {
-		myatmPin = atmPin;
-	}
-	public String getUsername() {
-		return myUsername;
-	}
-	public void setUsername(String username) {
-		myUsername = username;
-	}
-	public String getPassword() {
-		return myPassword;
-	}
-	public void setPassword(String password) {
-		myPassword = password;
-	}
-	
-	//getter setter close
-	
-	private String myName, myAddress, myUsername, myPassword;
-	private int myatmPin;
-	private double myDOB, myphoneNumber;
 	
 }
