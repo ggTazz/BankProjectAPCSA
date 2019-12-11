@@ -64,7 +64,6 @@ public class Bank{
 					}
 					if(AccountDecision.equalsIgnoreCase("Savings") || AccountDecision.equalsIgnoreCase("Savings Account")) {
 						System.out.println(Savings.getAccountNumber());
-						System.out.println(Savings.checkAccountExists(accNr));
 						System.out.println("Please type the name of the page you wish to go to.");
 						System.out.println("Press Help for Commands.");
 					}
