@@ -56,9 +56,7 @@ class safeBoxes {
 	}
 	
 	public static boolean verifyboxID(int username, int password) {
-		 System.out.println(username);
-		 System.out.println(password);
-		 for (int g = 0; g < saver.size(); g++) {
+		 for (g = 0; g < saver.size(); g++) {
 			 if (saver.get(g).getboxCode() == password && saver.get(g).getboxNumber() == username) {
 				 return true;
 			 }
@@ -71,44 +69,57 @@ class safeBoxes {
 	public static void sload() {
 		
 			String luserID;
-			int lboxNumber, lboxCode, f = 0, j = 0;
-			ArrayList<String> litems = null;
+			int lboxNumber, lboxCode, f = 0;
 		
 			try {
 			
 				Scanner tink = new Scanner(new File("SafeBoxData"));
+				Scanner rink = new Scanner(new File("SafeBoxData"));
 				tink.useDelimiter("[,\n]");
-			
+				rink.useDelimiter("[,\n]");
+				
 				while(tink.hasNext()) {
-			
-					luserID = tink.next().trim();
-					System.out.print(luserID);
-					lboxNumber = tink.nextInt();
-					System.out.print(lboxNumber);
-					lboxCode = tink.nextInt();
-					System.out.print(lboxCode);
-					tink.useDelimiter("[|\n]");
 					
-					while(tink.hasNext()) {
+					ArrayList<String> litems = new ArrayList<String>();
+					int j = 0;
+					luserID = tink.next().trim();
+					lboxNumber = tink.nextInt();
+					lboxCode = tink.nextInt();
+					
+					//System.out.println(luserID + lboxNumber + lboxCode);
+					
+					rink.next();
+					rink.next();
+					rink.next();
+					
+					while(j == 0) {
 						
-						litems.add(tink.next());
-						
+						if (rink.hasNextInt() == true) {
+							j = 1;;
+						}
+						else if (rink.hasNext() == true){
+							litems.add(rink.next());
+						}
+						else {
+							j = 1;
+						}
+						//System.out.println(litems);
 					}
-						
+					
 					safeBoxes temp = new safeBoxes(luserID, lboxNumber, lboxCode, litems);
+					
 					saver.add(f, temp);
 					f++;
 					tink.nextLine();
-					tink.useDelimiter("[,\n]");
-			
+					rink.nextLine();
+					
 				}
-			
 				tink.close();
-			
+				rink.close();	
 			}
 		
 			catch(Exception e) {
-				System.out.print("FUCK!");
+				e.printStackTrace();
 			}
 		
 	}
@@ -131,7 +142,7 @@ class safeBoxes {
 			try {
 				rand = saver.get(i).getItems();
 				for (int z = 0; z < rand.size(); z++) {
-					itemizedString = itemizedString + "|" + rand.get(z);
+					itemizedString = itemizedString + "," + rand.get(z);
 				}
 			
 			}
@@ -142,7 +153,7 @@ class safeBoxes {
 			
 			try {
 				BufferedWriter writer = new BufferedWriter(new FileWriter("SafeBoxData", true));
-				writer.write(saver.get(i).getuserID() + "," + saver.get(i).getboxNumber() + "," + saver.get(i).getboxCode() + ","
+				writer.write(saver.get(i).getuserID() + "," + saver.get(i).getboxNumber() + "," + saver.get(i).getboxCode()
 				 + itemizedString);
 				
 				writer.newLine();
@@ -158,7 +169,7 @@ class safeBoxes {
 	}	
 	
 	private int myboxNumber, myboxCode;
-	private static int r = 0;
+	public static int r = 0, g;
 	public static int tempCode;
 	private String myuserID;
 	private  ArrayList<String> myItems = new ArrayList<String>(100);

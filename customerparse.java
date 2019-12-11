@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class customerparse { 
 
 	static ArrayList<customer> list = new ArrayList<customer>(100);
-	private static Scanner s;
 	
 	public static void main( String [] args) {
 		
@@ -21,7 +20,6 @@ public class customerparse {
 		
 		safeBoxes.sload();
 		load();
-		
 		
 		
 		do {
@@ -58,16 +56,19 @@ public class customerparse {
 						enter = input.next();
 						
 						
-						s = new Scanner(enter);
+						Scanner s = new Scanner(enter);
 						s.useDelimiter("[,\n]");
 						
 						while(s.hasNext()) {
 							words = s.next().trim();
 							ran.add(words);
 						}
+						
+						s.close();
+						
 						safeBoxes.addUser(enterUsername, ran);
 						System.out.println("\nYour box number is " + (safeBoxes.saver.size() - 1) + " and your code is "
-						+ safeBoxes.tempCode);
+						+ safeBoxes.tempCode + "\n");
 						
 					}
 					
@@ -81,6 +82,7 @@ public class customerparse {
 						
 						if (safeBoxes.verifyboxID(xx, xy) == true) {
 							System.out.println("\nBox Open\n");
+							System.out.println(safeBoxes.saver.get(safeBoxes.g).getItems() + "\n");
 						}
 						else {
 							System.out.println("\nBox combination incorrect\n");
@@ -89,6 +91,7 @@ public class customerparse {
 					}
 					
 				}
+				
 				else {
 					System.out.println("\nUsername or Password is Incorrect\n");
 				}
@@ -198,7 +201,7 @@ public class customerparse {
 				lpassword = ink.next().trim();
 			
 				customer temp = new customer(lname, laddress, lDOB, lphoneNumber, latmPin, lusername, lpassword);
-			
+				
 				list.add(f, temp);
 				f++;
 				ink.nextLine();
@@ -210,7 +213,7 @@ public class customerparse {
 		}
 		
 		catch(Exception e) {
-			
+			System.out.print("oops");
 		}
 		
 	}
