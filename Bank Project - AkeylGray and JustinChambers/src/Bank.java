@@ -9,6 +9,7 @@ import java.time.LocalTime;
 import Employees.EmployeesData;
 import java.io.FileNotFoundException;
 import java.lang.Math;
+import java.util.*;
 
 //ISSUES 12/9
 //need to optimize code. I doubt copying and pasting code is what to do.
@@ -26,6 +27,7 @@ public class Bank{
 		int range = maxBranchNumber - minBranchNumber + 1;
 		int branchNumber = (int)(Math.random() * range) + minBranchNumber;
 		
+	
 		//Time
 		LocalTime time = LocalTime.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm a");
@@ -61,7 +63,8 @@ public class Bank{
 						System.out.println("Press Help for Commands.");
 					}
 					if(AccountDecision.equalsIgnoreCase("Savings") || AccountDecision.equalsIgnoreCase("Savings Account")) {
-						System.out.println("Account Number is: " + Accounts.getAccountNumber());
+						System.out.println(Savings.getAccountNumber());
+						System.out.println(Savings.checkAccountExists(accNr));
 						System.out.println("Please type the name of the page you wish to go to.");
 						System.out.println("Press Help for Commands.");
 					}
@@ -186,31 +189,15 @@ public class Bank{
 	
 	//ACCOUNTS (WIP)
 	static class Accounts{
-		static SavingsAccount SA = new SavingsAccount();{
-			double balance;
+		static Savings SA = new Savings();{
+			double balance = 100;
 			String accountNumber;
 			double withdrawl;
-			double accountBalance, deposit;
-				 String[] accounts = {"12345", "45678"};
-					   accountNumber = Accounts.getAccountNumber();
-					System.out.println("Account Number is: " + accountNumber);
+			double deposit;
+			System.out.println(Savings.savingsAccount());
 		}
-				public static String getAccountNumber(){
-					   Scanner myscanner = new Scanner(System.in);
-					   System.out.print("Enter Account Number: ");
-					        String enteredAccountNumber = myscanner.nextLine();
-					        return enteredAccountNumber;
-					        }
-				public static boolean checkAccountExists(String accNr){
-					   boolean accountExist = false;
-					   return accountExist;
-					   }
-				public static void setAccountNumber(String accNr){   
-				}
-				
 	}
 }
-
 	
 	
 	
