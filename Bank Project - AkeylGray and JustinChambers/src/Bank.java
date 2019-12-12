@@ -10,13 +10,17 @@ import java.io.FileNotFoundException;
 import java.lang.Math;
 import java.util.*;
 
-//ISSUES 12/9
-//need to optimize code. I doubt copying and pasting code is what to do.
+//ISSUES 12/12
+//implement safety deposit boxes at the START of the program
 //Find a way to have the time update.
 
 public class Bank{
 	public static void main(String[] args) {
-		
+		customerparse CP = new customerparse();{
+			CP.login();
+		}
+	}
+	public static void banque() {
 		Scanner UserInput = new Scanner(System.in);
 		Scanner UserInput2 = new Scanner (System.in); 
 		
@@ -32,25 +36,6 @@ public class Bank{
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm a");
 		
 		
-		//NewTime
-		/*while (true) {
-			try {
-				Thread.sleep(60*1000); //one minute
-				
-				Calendar calendar = new GregorianCalendar();
-				String hour; 
-				int time = calendar.get(Calendar.HOUR);
-				int m = calendar.get(Calendar.MINUTE);
-				int sec = calendar.get(Calendar.SECOND);
-				
-				if(calendar.get(Calendar.AM_PM) == 0)
-					hour = "A.M.";
-				else
-					hour = "P.M.";
-				System.out.println(time + ":" + m +)
-			}
-		}
-		*/
 		//Page Selection 
 				int loop = -99;
 				
@@ -119,8 +104,9 @@ public class Bank{
 				}
 				if(AccountDecision.equalsIgnoreCase("Sell")){
 					SellBonds SQ = new SellBonds();{
-						System.out.println("Hi thisworks");
 						SQ.secondQuestions();
+						//If the year is equal to eachother us
+						//Add another variable for BuyYear and SellYear
 					}
 				}
 				if(AccountDecision.equalsIgnoreCase("Invest Money")) {
@@ -145,7 +131,6 @@ public class Bank{
 			if (page.equalsIgnoreCase("Help")) {
 				System.out.println("Accounts - Takes you to the Accounts page.");
 				System.out.println("Employee Data - Takes you to the Employees page.");
-				System.out.println("Papa John - Pizza Pasta BB.");
 				System.out.println("ATM - Takes you to the ATM page.");
 				System.out.println("Home -  Takes you back to the main menu.");
 				System.out.println("Investment -  Takes you to the Investment Page.");
@@ -159,7 +144,7 @@ public class Bank{
 				break;
 			}
 	}
-		
+	
 	//EMPLOYEES (WIP)
 	static class Employees{
 	static EmployeesData ED = new EmployeesData();{
@@ -195,6 +180,7 @@ public class Bank{
 		}
 	}
 }
+	
 
 
 	
