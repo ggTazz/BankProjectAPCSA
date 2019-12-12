@@ -9,7 +9,7 @@ public class Account {
     
  
     
-        //need someone to set balance amounts using acc numbers
+        //need someone to set balance amounts using ussernames and passwords
        
         
         
