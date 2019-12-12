@@ -44,7 +44,7 @@ public class Account {
                  if (input.equalsIgnoreCase("withdraw"))
                 {
                     System.out.println("Enter a sum to withdraw");
-                    double withdraw = x.nextInt();
+                    double newamount = x.nextDouble();
                     user.takeMoney(newamount);
                     
                         if (newamount > balance)
