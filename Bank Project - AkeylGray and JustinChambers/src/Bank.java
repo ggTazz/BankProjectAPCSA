@@ -2,7 +2,6 @@
 //or by making it an object
 
 
-import java.util.Scanner;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -32,6 +31,26 @@ public class Bank{
 		LocalTime time = LocalTime.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm a");
 		
+		
+		//NewTime
+		/*while (true) {
+			try {
+				Thread.sleep(60*1000); //one minute
+				
+				Calendar calendar = new GregorianCalendar();
+				String hour; 
+				int time = calendar.get(Calendar.HOUR);
+				int m = calendar.get(Calendar.MINUTE);
+				int sec = calendar.get(Calendar.SECOND);
+				
+				if(calendar.get(Calendar.AM_PM) == 0)
+					hour = "A.M.";
+				else
+					hour = "P.M.";
+				System.out.println(time + ":" + m +)
+			}
+		}
+		*/
 		//Page Selection 
 				int loop = -99;
 				
@@ -63,37 +82,51 @@ public class Bank{
 						System.out.println("Press Help for Commands.");
 					}
 					if(AccountDecision.equalsIgnoreCase("Savings") || AccountDecision.equalsIgnoreCase("Savings Account")) {
-						System.out.println(Savings.getAccountNumber());
+						String accountNumber =  Savings.accountNumber;
+						Savings SA = new Savings();
+						{
+							Savings.Functions();
+						}
 						System.out.println("Please type the name of the page you wish to go to.");
 						System.out.println("Press Help for Commands.");
 					}
 				}
 			if (page.equalsIgnoreCase("ATM")) {
-				System.out.println(TheBank.ATM());
+				
 				System.out.println("Please type the name of the page you wish to go to.");
 				System.out.println(time.format(formatter));
 				System.out.println("Press Help for Commands.");
 			}
 			if (page.equalsIgnoreCase("Customer")) {
-				System.out.println(TheBank2.Customer());
+				
 				System.out.println("Please type the name of the page you wish to go to.");
 				System.out.println(time.format(formatter));
 				System.out.println("Press Help for Commands.");
 			}
 			if (page.equalsIgnoreCase("Papa John")) {
-				System.out.println(TheBank.getPPP());
-				System.out.println("Please type the name of the page you wish to go to.");
-				System.out.println(time.format(formatter));
-				System.out.println("Press Help for Commands.");
-			}
-			if (page.equalsIgnoreCase("Mom Gat")) {
-				System.out.println(TheBank.getMomGat());
+				
 				System.out.println("Please type the name of the page you wish to go to.");
 				System.out.println(time.format(formatter));
 				System.out.println("Press Help for Commands.");
 			}
 			if (page.equalsIgnoreCase("Investment")) {
-				System.out.println(HedgeFunds.HF);
+				System.out.println("Do you wish to buy/sell Stock, or invest money?");
+				String AccountDecision = UserInput.nextLine();
+				if(AccountDecision.equalsIgnoreCase("Buy")){
+					StocksBonds IS = new StocksBonds();{
+						IS.firstQuestions();
+					}
+				}
+				if(AccountDecision.equalsIgnoreCase("Sell")){
+					SellBonds SQ = new SellBonds();{
+						System.out.println("Hi thisworks");
+						SQ.secondQuestions();
+					}
+				}
+				if(AccountDecision.equalsIgnoreCase("Invest Money")) {
+					System.out.println(HedgeFunds.HF);
+				
+				}
 				System.out.println("Please type the name of the page you wish to go to.");
 				System.out.println(time.format(formatter));
 				System.out.println("Press Help for Commands.");
@@ -125,31 +158,6 @@ public class Bank{
 			if (page.equalsIgnoreCase("End") || page.equalsIgnoreCase("Exit") || page.equalsIgnoreCase("Stop"))
 				break;
 			}
-		
-		
-		//SEPERATE CLASSES(Mostly Test Classes)
-	}
-	static class TheBank extends Test{
-		public static double ATM() {
-			return Test.testNumber4;
-		}
-		public static int getAccounts(){
-			return Test.testNumber2;
-	}
-		public static int getPPP() {
-			return Test.testNumber;
-		}
-		public static String getMomGat() {
-			return Test.hi;
-		}
-	}
-	static class TheBank2 extends Test2{
-		public static int Customer(){
-			return Test2.testNumber3;
-		}
-		public static double bebop() {
-			return Test2.volume;
-		}
 	}
 		
 	//EMPLOYEES (WIP)
@@ -162,6 +170,7 @@ public class Bank{
 	//INVESTMENT
 	//Trying to find a way to shorten/optimize code.
 	//Don't invest for 1000 years!
+	//Make it so you input the values for shareNumbers, stockPrice, buyingPrice, sellingPrice, whenBuy, whenSell
 	static class HedgeFunds{
 		static HedgeFunds HF = new HedgeFunds();{
 			Scanner in = new Scanner(System.in); 
@@ -185,18 +194,9 @@ public class Bank{
 		return investmentAmount * Math.pow(1 + monthlyInterestRate, years * 12);
 		}
 	}
-	
-	//ACCOUNTS (WIP)
-	static class Accounts{
-		static Savings SA = new Savings();{
-			double balance = 100;
-			String accountNumber;
-			double withdrawl;
-			double deposit;
-			System.out.println(Savings.savingsAccount());
-		}
-	}
 }
+
+
 	
 	
 	

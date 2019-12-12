@@ -4,26 +4,26 @@ public class Savings
 {
    
     // Class Variables
-    private static double balance = 100;
-    private static String accountNumber;
+    protected static double balance = 100;
+    static String accountNumber;
     private static double withdrawl;
     private static double deposit;
     
      // Create new Scanner object
-    private static Scanner myscanner = new Scanner(System.in);
+    protected static Scanner myscanner = new Scanner(System.in);
 
     // Accounts in the Bank
     //private String[] accounts = new String[10];
-    private static String[] accounts = {"12345", "45678"};
+    protected static String[] accounts = {"12345", "45678"};
     
     // Create a hashmap to store accounts and balance
-    private static HashMap<String, Double> accountBalance = new HashMap<String, Double>();
+    protected static HashMap<String, Double> accountBalance = new HashMap<String, Double>();
 
     
             
 
     // Execution Method
-    public static void main(String[] args) {
+    public static void Functions(){
         accountBalance.put(new String("12345"), new Double(100));
         accountBalance.put(new String("45678"), new Double(200));
         
