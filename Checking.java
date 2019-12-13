@@ -50,7 +50,7 @@ public class Account {
                         if (newamount > balance)
                             {
                             System.out.println("You don't have enough money. You've been charged an overdraft fee.");
-                            OverdraftFee();
+                            user.OverdraftFee();
                             }
                         
                         else 
