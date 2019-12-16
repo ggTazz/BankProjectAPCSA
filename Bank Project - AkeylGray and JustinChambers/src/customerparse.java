@@ -18,7 +18,7 @@ public class customerparse {
 		int atmPin, answer, i = 0, xx, xy;
 		double DOB, phoneNumber;
 		
-		safeBoxes.sload();
+		//safeBoxes.sload();
 		load();
 		
 		
@@ -236,5 +236,5 @@ public class customerparse {
 		 return false;
 		
 	}
-	
+
 }

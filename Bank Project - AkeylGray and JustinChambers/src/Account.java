@@ -1,55 +1,84 @@
-//need Customer team to create accountnumbers to put in
-
-//overdraft and maintenance fees
 import java.util.Scanner;
 
 public class Account {
-     public static void main(String args[]) {
+     public static void launcher() {
     
-    Checking user = new Checking();
-    System.out.println("Account number:" + " " + accountnumber);
-    System.out.println("Balance:" + " " + user.getBalance(accountnumber);
-    System.out.println("Deposit or withdrawal? Choose one.");
+    Savings user = new Savings();
+    Checking user2 = new Checking();
+    int balance = 100;
+    int newAccountNumber;
     
-            Scanner x = new Scanner(System.in);
-            String input = x.nextLine();
+ 
     
-        for (int sentinel = 1; sentinel > 0)
-        {
-                if (input.equalsIgnoreCase("deposit"))
-                    {
-                        System.out.println("Enter a sum to deposit");
-                        double deposit = x.nextDouble();
-                        user.depositMoney(double deposit);
-                            System.out.println("Action completed. Would you like to deposit again? (yes or no)");
-                            String r = x.NextLine();
-                            if (r.equalsIgnoreCase("no")
-                                {
-                                    int sentinel = -1;
-                                }
-                            
-                    }
-            
-        }
-                    
-                    
-            for (int sentinel2 = 1; sentinel2 > 0)
-            {
-                else 
-                {
-                    System.out.println("Enter a sum to withdraw");
-                    double withdraw = x.nextInt();
-                    user.takeMoney(double newamount);
-                        System.out.println("Action completed. Would you like to withdraw again? (yes or no)");
-                        String s = x.NextLine();
-                        if (s.equalsIgnoreCase("no")
-                            {
-                                int sentinel2 = -1;
-                            }
-                        
-                }
-            }
+        //need someone to set balance amounts using ussernames and passwords
+       
+    Scanner userInput = new Scanner(System.in);
+    Scanner userInput2 = new Scanner(System.in);
     
+    //System.out.println("Account number:" + " " + Savings.accountNumber);
+    System.out.println("(1) Go to your Checking Account");
+    System.out.println("(2) Make a new account");
+    int accNDecision = userInput.nextInt();
+    	if (accNDecision == 1) {
+    		System.out.print("Enter in your account number: ");
+		    int accountNumber = userInput.nextInt();
+		    if((accountNumber == 12345) || (accountNumber == 45678)) {
+		    System.out.println("Your balance is:" + " " + balance);
+		    System.out.println("Deposit or withdrawal? Choose one.");
+		    	String input = userInput2.nextLine();
+		                if (input.equalsIgnoreCase("Deposit"))
+		                    {
+			                	for (int sentinel = 1; sentinel > 0;)
+			                	{
+			                		System.out.print("Enter a sum to deposit: ");
+			                        double deposit = userInput2.nextDouble();
+			                        user.setDeposit(Savings.accountNumber);
+			                            System.out.println("Action completed. Would you like to deposit again? (yes or no)");
+			                            String r = userInput2.nextLine();
+			                            if (r.equalsIgnoreCase("no"))
+			                                    sentinel = -1;                          
+			                    }
+		            
+		                    }	           
+		                if (input.equalsIgnoreCase("Withdraw"))
+		                	{
+		                	 for (int sentinel2 = 1; sentinel2 > 0;)
+		 		            {
+		                    System.out.println("Enter a sum to withdraw");
+		                    double newamount = userInput.nextDouble();
+		                    user2.takeMoney(newamount);
+		                    
+		                        if (newamount > balance)
+		                            {
+		                            System.out.println("You don't have enough money. You've been charged an overdraft fee.");
+		                            user2.OverdraftFee();
+		                            }
+		                        
+		                        else 
+		                        {
+		                            System.out.println("Action completed. Would you like to withdraw again? (yes or no)");
+		                        String s = userInput.nextLine();
+		                        if (s.equalsIgnoreCase("no"))
+		                            {
+		                                 sentinel2 = -1;
+		                            }
+		                        }
+		                        
+		                }
+		            }
+		        
+		        user2.MaintenanceFee();
+		     }
+		     } 
+    	if (accNDecision == 2) {
+    		int maxBranchNumber = 100000;
+    		int minBranchNumber = 0;
+    		int range = maxBranchNumber - minBranchNumber + 1;
+    		newAccountNumber = (int)(Math.random() * range) + minBranchNumber;
+    		System.out.println("Your new account number is " + newAccountNumber);
+    	}
+	}
+	}
     
     class Checking
     
@@ -58,27 +87,40 @@ public class Account {
         //default constructor
         public Checking()
         {
-            myCheckingMoney = 0.00;
+            double balance = 0;
+			myBalance = balance;
         }
     
         //accessors
         public double getBalance(int acccountnumber)
         {
-            return myCheckingMoney;
+            return myBalance;
         }
         
         //setters
-        public double depositMoney(double newamount)
+        public void setBalance(double money)
         {
-            myCheckingMoney = newamount + myCheckingMoney;
+            double balance = money;
+        }
+        public void depositMoney(double newamount)
+        {
+            myBalance = newamount + myBalance;
         }
     
-         public double takeMoney(double newamount)
+         public void takeMoney(double newamount)
         {
-            myCheckingMoney = myCheckingMoney - newamount;
+            myBalance = myBalance - newamount;
         }
-    private double myCheckingMoney = 0.00;
+        
+        public void MaintenanceFee()
+        {
+            balance = balance - 10.00;
+        }
+        
+        public void OverdraftFee()
+        {
+            balance = balance - 20.00; 
+        }
+    private double myBalance = 0.00;
+    private double balance;
     }
-    
-    }
-}
