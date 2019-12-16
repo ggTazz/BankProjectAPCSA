@@ -19,7 +19,7 @@ public class customerparse {
 		double DOB, phoneNumber;
 		
 		safeBoxes.sload();
-		load();
+		load(); //loads data
 		
 		
 		do {
@@ -31,7 +31,7 @@ public class customerparse {
 			answer = input.nextInt();
 			input.nextLine();
 		
-			if (answer == 1) {
+			if (answer == 1) { //selects between two options
 			
 				System.out.print("\nUsername: ");
 				enterUsername = input.nextLine();
