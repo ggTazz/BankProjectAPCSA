@@ -43,6 +43,7 @@ public class Account {
 		                    }	           
 		                if (input.equalsIgnoreCase("Withdraw"))
 		                	{
+					String yesorno2 = "yes";
 		                	 while (yesorno2.equalsIgnoreCase("yes"))
 		 		                    
 		 		           {
