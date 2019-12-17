@@ -5,11 +5,11 @@ import java.util.List;
 
 public class AutoTellerMachine{
 
-	public static void main(String[] args){
-		
+	public static void launcher(){
+		/*
 		customerparse CP = new customerparse();
 		customerparse.List<customer> list = list.getList();
-	
+		*/
 		int scamaction;
 		int thonk;
 		Scanner userInput = new Scanner(System.in);
@@ -17,7 +17,7 @@ public class AutoTellerMachine{
 		
 		System.out.println("Welcome to Vito Bank's Premium ATM!");
 		System.out.println("Enter your PIN Number here to access your account");
-		
+		/*
 		String userPIN = userPINput.nextLine();
 		boolean pinVerification =  false;
 		while (pinVerification = false) {
@@ -29,8 +29,8 @@ public class AutoTellerMachine{
 				// Else statement for people who are not part of the bank in the future.
 			}
 		}
-		
-		System.out.println("Hello again " + /*CustomerName*/  ", what sort of transaction would you like to do?");
+		*/
+		System.out.println("What sort of transaction would you like to do?");
 		System.out.println("Enter 0 for Deposit, 1 for Withdrawal, 2 for Balance Inquiry, 3 for Transfers, 4 to literally burn money");
 		thonk = userInput.nextInt();
 		int stonks = 0;

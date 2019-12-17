@@ -10,7 +10,7 @@ public class customerparse {
 
 	static ArrayList<customer> list = new ArrayList<customer>(100);
 	
-	public static void login() {
+	public static void login(){
 		
 		Scanner input = new Scanner(System.in);
 		
@@ -19,19 +19,19 @@ public class customerparse {
 		double DOB, phoneNumber;
 		
 		//safeBoxes.sload();
-		load();
+		load(); //loads data
 		
 		
 		do {
 			
-			System.out.println("Welcome to the bank.\n");
+			System.out.println("Welcome to the Vito Bank!\n");
 			System.out.println("(1) Sign in");
 			System.out.println("(2) Create new account\n");
 		
 			answer = input.nextInt();
 			input.nextLine();
 		
-			if (answer == 1) {
+			if (answer == 1) { //selects between two options
 			
 				System.out.print("\nUsername: ");
 				enterUsername = input.nextLine();
@@ -73,7 +73,7 @@ public class customerparse {
 						
 					}
 					
-					if (answer == 2) {
+					else if (answer == 2) {
 						
 						System.out.print("\nBox number: ");
 						xx = input.nextInt();
@@ -91,12 +91,9 @@ public class customerparse {
 						
 					}
 					if (answer == 3) {
-						Bank B = new Bank();{
-							B.banque();
-							
-						}
+						Bank B = new Bank();
+						B.banque();
 					}
-					
 				}
 				
 				else {
@@ -236,5 +233,5 @@ public class customerparse {
 		 return false;
 		
 	}
-
+	
 }
