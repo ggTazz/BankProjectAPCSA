@@ -85,10 +85,42 @@ public class EmployeesDetails{
 		try {
 			ArrayList<EmployeesDetails> empList = new ArrayList<EmployeesDetails>() ;
 		    File file = new File ( "G:\\Bank Project - AkeylGray and JustinChambers/EmployeesData.txt") ;
+		    int rV = 0;
 		    Scanner in = new Scanner(System.in);
-		    System.out.println("Please Enter Employee ID:");
+		    while (rV == 0) {
+		    System.out.print("Please Enter Employee ID:");
 			String id = in.nextLine();
-		    
+			
+		    if (id.equalsIgnoreCase("ID List")) {
+		    	System.out.println("637492");
+		    	System.out.println("173459");
+		    	System.out.println("815462");
+		    	System.out.println("357098");
+		    	System.out.println("732893");
+		    	System.out.println("940357");
+		    	System.out.println("860945");
+		    	System.out.println("246786");
+		    	System.out.println("289382");
+		    	System.out.println("935715");
+		    	System.out.println("356190");
+		    	System.out.println("283780");
+		    	System.out.println("758928");
+		    	System.out.println("370972");
+		    	System.out.println("203078");
+		    	System.out.println("378257");
+		    	System.out.println("298309");
+		    	System.out.println("485492");
+		    	System.out.println("498758");
+		    	System.out.println("926478");
+		    	System.out.println("102680");
+		    	System.out.println("387478");
+		    	System.out.println("397558");
+		    	System.out.println("209867");
+		    	System.out.println("149020");
+		    	System.out.println("189563");
+		    	System.out.println("294936");
+		    }
+		    	
 		    if ( file.exists() )
 		    {  
 		    	Scanner inFile = new Scanner( file );
@@ -117,7 +149,7 @@ public class EmployeesDetails{
 		        }
 
 		        inFile.close(); 
-		        
+		        rV = 1;
 		    }
 			else {
 				System.out.println( "File Not Found");
@@ -125,7 +157,7 @@ public class EmployeesDetails{
 		    for (EmployeesDetails employee : empList){
 		    	
 		    	if(employee.getEmpID().equals(id)) {
-					System.out.println( "ID No. :" + employee.getEmpID());
+					System.out.println( "ID No. : " + employee.getEmpID());
 					System.out.println( "First Name :" + employee.getEmpFName());
 					System.out.println( "Last Name :" + employee.getEmpLName());
 					System.out.println( "Date of Birth :" + employee.getDOB());
@@ -136,6 +168,7 @@ public class EmployeesDetails{
 		    	}
 			}
 		}
+		}
 		catch ( FileNotFoundException e) {
 			System.out.println( "File Not Found Exception");
 		}
@@ -143,3 +176,4 @@ public class EmployeesDetails{
 	}
 
 }
+	
