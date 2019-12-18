@@ -4,7 +4,8 @@ public class Savings
 {
    
     // Class Variables
-    protected static double balance = 100;
+	centralBalance B = new centralBalance();
+    protected static double balance = centralBalance.CashMoney();
     static String accountNumber;
     private static double withdrawl;
     private static double deposit;

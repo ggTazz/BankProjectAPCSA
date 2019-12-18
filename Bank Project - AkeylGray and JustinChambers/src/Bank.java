@@ -79,7 +79,7 @@ public class Bank{
 				}
 			if (page.equalsIgnoreCase("ATM")) {
 				AutoTellerMachine ATM = new AutoTellerMachine();
-				AutoTellerMachine.launcher();
+				AutoTellerMachine.ATMlauncher();
 				System.out.println("Please type the name of the page you wish to go to.");
 				System.out.print("The time is ");
 				Clock.clocck();
@@ -139,13 +139,18 @@ public class Bank{
 				System.out.println("Please type the name of the page you wish to go to.");
 				System.out.println("Press Help for Commands.");
 			}
+			if (page.equalsIgnoreCase("Balance")) {
+				System.out.println(centralBalance.CashMoney());
+				System.out.println("Please type the name of the page you wish to go to.");
+				System.out.println("Press Help for Commands.");
+			}
 			if (page.equalsIgnoreCase("Help")) {
-				System.out.println("Accounts - Takes you to the Accounts page.");
 				System.out.println("Employee Data - Takes you to the Employees page.");
 				System.out.println("ATM - Takes you to the ATM page.");
 				System.out.println("Home -  Takes you back to the main menu.");
 				System.out.println("Investment -  Takes you to the Investment Page.");
 				System.out.println("Time - What do you think?");
+				System.out.println("Balance - What do you think?");
 				System.out.println("Loan - Takes you to the Loan Page.");
 				System.out.println("Stop - What do you think?");
 				System.out.println(" ");

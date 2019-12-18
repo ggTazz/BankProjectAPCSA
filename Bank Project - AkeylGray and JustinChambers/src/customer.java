@@ -50,7 +50,7 @@ class customer {
 	public void setphoneNumber(double phoneNumber) {
 		myphoneNumber = phoneNumber;
 	}
-	public int getAtmPin() {
+	public static int getAtmPin() {
 		return myatmPin;
 	}
 	public void setAtmPin(int atmPin) {
@@ -72,7 +72,7 @@ class customer {
 	//getter setter close
 	
 	private String myName, myAddress, myUsername, myPassword;
-	private int myatmPin;
+	private static int myatmPin;
 	private double myDOB, myphoneNumber;
 	
 }

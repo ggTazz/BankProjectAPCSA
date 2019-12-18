@@ -133,6 +133,7 @@ public class customerparse {
 				i++;
 				
 				System.out.println("\nAccount created!");
+				System.out.println("Please say N to save your account.");
 				System.out.println();
 				
 			}
@@ -142,7 +143,6 @@ public class customerparse {
 			System.out.println();
 			
 		} while(mainPage.equalsIgnoreCase("Y"));
-	
 		input.close();
 		save();
 		safeBoxes.ssave();
@@ -221,7 +221,6 @@ public class customerparse {
 		}
 		
 	}
-	
 	public static boolean verify(String username, String password) {
 		
 		 for (int g = 0; g < list.size(); g++) {

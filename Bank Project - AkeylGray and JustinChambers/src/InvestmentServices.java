@@ -12,92 +12,220 @@ class StocksBonds
 	public void firstQuestions(){
 	double shareNumbers = 0;
 	double stockPrice = 0;
+	String companyDecision;
 	String countryDecision;
 	String currencyTitle;
+	double lV = 0;
 	Scanner input = new Scanner(System.in);
 	Scanner input2 = new Scanner(System.in);
     double commissionFee = 12.99;
     double ForeignPrice = 0;
-    System.out.println("How much stock did you buy?");
+    System.out.println("How many shares did you buy?");
 	shareNumbers = input.nextInt();
-	System.out.println("What was the price of this stock?");
-	stockPrice = input.nextDouble();
-	System.out.println("Where did you buy the stock from?");
+	while(lV == 0) {
+	System.out.println("What company did you buy this stock from?");
+	System.out.println("Press 'Help' for available options");
+	companyDecision = input2.nextLine();
+	if (companyDecision.equalsIgnoreCase("Apple")) {
+		stockPrice = 279.50;
+		lV = 1;
+	}
+	if (companyDecision.equalsIgnoreCase("CVS")) {
+		stockPrice = 74.20;
+		lV = 1;
+	}
+	if (companyDecision.equalsIgnoreCase("Microsoft")) {
+		stockPrice = 154.89;
+		lV = 1;
+	}
+	if (companyDecision.equalsIgnoreCase("Disney")) {
+		stockPrice = 148.08;
+		lV = 1;
+	}
+	if (companyDecision.equalsIgnoreCase("McDonald's")) {
+		stockPrice = 198.16;
+		lV = 1;
+	}
+	if (companyDecision.equalsIgnoreCase("NVIDIA")) {
+		stockPrice = 227.00;
+		lV = 1;
+	}
+	if (companyDecision.equalsIgnoreCase("Visa")) {
+		stockPrice = 185.51;
+		lV = 1;
+	}
+	if (companyDecision.equalsIgnoreCase("AT&T")) {
+		stockPrice = 38.64;
+		lV = 1;
+	}
+	if (companyDecision.equalsIgnoreCase("Verizon")) {
+		stockPrice = 61.45;
+		lV = 1;
+	}
+	if (companyDecision.equalsIgnoreCase("FedEx")) {
+		stockPrice = 164.25;
+		lV = 1;
+	}
+	if (companyDecision.equalsIgnoreCase("Help")) {
+		System.out.println("CVS");
+		System.out.println("Apple");
+		System.out.println("Microsoft");
+		System.out.println("Disney");
+		System.out.println("McDonald's");
+		System.out.println("NVIDIA");
+		System.out.println("Visa");
+		System.out.println("AT&T");
+		System.out.println("Verizon");
+		System.out.println("FedEx");
+	}
+	}
+	while (lV == 1) {
+	System.out.println("Where did you buy this stock from?");
+	System.out.println("Press 'Help' for more options.");
+	companyDecision = input.nextLine();
 	countryDecision = input2.nextLine();
 	if (countryDecision.equalsIgnoreCase("Europe")) {
-		ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-		ForeignPrice = ForeignCurrencyExchange.EuropeExchange(stockPrice);
-		currencyTitle = "Euros";
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendEuropeExchange(stockPrice);
+		lV = 2;
 		}
 	}
 	if (countryDecision.equalsIgnoreCase("Asia")) {
-		ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-		ForeignPrice = ForeignCurrencyExchange.AsiaExchange(stockPrice);
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendAsiaExchange(stockPrice);
+		lV = 2;
 		}
 	}
 	if (countryDecision.equalsIgnoreCase("Australia")) {
-		ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-		ForeignPrice = ForeignCurrencyExchange.AustraliaExchange(stockPrice);
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendAustraliaExchange(stockPrice);
+		lV = 2;
 		}
 	}
 	if (countryDecision.equalsIgnoreCase("Russia")) {
-		ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-		ForeignPrice = ForeignCurrencyExchange.RussiaExchange(stockPrice);
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendRussiaExchange(stockPrice);
+		lV = 2;
 		}
 	}
 	if (countryDecision.equalsIgnoreCase("Britain")) {
-		ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-		ForeignPrice = ForeignCurrencyExchange.BritishExchange(stockPrice);
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendBritishExchange(stockPrice);
+		lV = 2;
 		}
 	}
 	if (countryDecision.equalsIgnoreCase("China")) {
-		ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-		ForeignPrice = ForeignCurrencyExchange.ChinaExchange(stockPrice);
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendChinaExchange(stockPrice);
+		lV = 2;
 		}
 	}
 	if (countryDecision.equalsIgnoreCase("Africa")) {
-		ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-		ForeignPrice = ForeignCurrencyExchange.AfricaExchange(stockPrice);
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendAfricaExchange(stockPrice);
+		lV = 2;
 		}
 	}
 	if (countryDecision.equalsIgnoreCase("Albania")) {
-		ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-		ForeignPrice = ForeignCurrencyExchange.AlbaniaExchange(stockPrice);
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendAlbaniaExchange(stockPrice);
+		lV = 2;
 		}
 	}
 	if (countryDecision.equalsIgnoreCase("Mexico")) {
-		ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-		ForeignPrice = ForeignCurrencyExchange.MexicoExchange(stockPrice);
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendMexicoExchange(stockPrice);
+		lV = 2;
 		}
 	}
 	if (countryDecision.equalsIgnoreCase("Korea")) {
-		ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-		ForeignPrice = ForeignCurrencyExchange.KoreaExchange(stockPrice);
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendKoreaExchange(stockPrice);
+		lV = 2;
 		}
 	}
 	if (countryDecision.equalsIgnoreCase("Norway")) {
-		ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-		ForeignPrice = ForeignCurrencyExchange.NorwayExchange(stockPrice);
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendNorwayExchange(stockPrice);
+		lV = 2;
 		}
 	}
 	if (countryDecision.equalsIgnoreCase("Romania")) {
-		ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-		ForeignPrice = ForeignCurrencyExchange.RomaniaExchange(stockPrice);
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendRomaniaExchange(stockPrice);
+		lV = 2;
 		}
 	}
 	if (countryDecision.equalsIgnoreCase("Poland")) {
-		ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-		ForeignPrice = ForeignCurrencyExchange.PolandExchange(stockPrice);
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendPolandExchange(stockPrice);
+		lV = 2;
 		}
 	}
 	if (countryDecision.equalsIgnoreCase("Japan")) {
-		ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-		ForeignPrice = ForeignCurrencyExchange.JapanExchange(stockPrice);
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendJapanExchange(stockPrice);
+		lV = 2;
 		}
 	}
+	if (countryDecision.equalsIgnoreCase("Saudi Arabia")) {
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendSaudiArabiaExchange(stockPrice);
+		lV = 2;
+		}		
+	}
+	if (countryDecision.equalsIgnoreCase("United Arab Emirates")) {
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendUAEExchange(stockPrice);
+		lV = 2;
+		}		
+	}
+	if (countryDecision.equalsIgnoreCase("Vietnam")) {
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendVietnamExchange(stockPrice);
+		lV = 2;
+		}		
+	}
+	if (countryDecision.equalsIgnoreCase("Switzerland")) {
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendSwitzerlandExchange(stockPrice);
+		lV = 2;
+		}		
+	}
+	if (countryDecision.equalsIgnoreCase("Brazil")) {
+		InvestmentCountries FEC = new InvestmentCountries();{
+		ForeignPrice = InvestmentCountries.SendBrazilExchange(stockPrice);
+		lV = 2;
+		}		
+	}
 	if (countryDecision.equalsIgnoreCase("USA")) {
+		lV = 2;
+	}
+	if (countryDecision.equalsIgnoreCase("Help")) {
+		System.out.println("Australia");
+		System.out.println("Britain");
+		System.out.println("China");
+		System.out.println("Russia");
+		System.out.println("Albania");
+		System.out.println("Brazil");
+		System.out.println("Japan");
+		System.out.println("Korea");
+		System.out.println("Mexico");
+		System.out.println("Norway");
+		System.out.println("Poland");
+		System.out.println("Romania");
+		System.out.println("Switzerland");
+		System.out.println("United Arab Emirates");
+		System.out.println("Turkey");
+		System.out.println("Vietnam");
+		System.out.println("Saudi Arabia");
+		System.out.println("Europe");
+		System.out.println("Asia");
+		System.out.println("Africa");
+		System.out.println("USA - Default");
 	}
 	StocksBonds.BuySellStocks(shareNumbers, stockPrice, commissionFee, ForeignPrice);
+	}
 	}
 	
     public static void BuySellStocks(double shareNumbers, double stockPrice, double commissionFee, double ForeignPrice)
@@ -120,13 +248,72 @@ class SellBonds{
 		double WhenSellMonth = 0;
 		double WhenSellYear = 0;
 		double WhenSell = 0;
+		int lV = 0;
+		String companyDecision;
+		double stockPrice = 0;
 		String countryDecision;
 		double ForeignPrice = 0;
 		Scanner input2 = new Scanner(System.in);
-		    System.out.println("What was the original price of this stock?");
-		    buyingPrice = input2.nextDouble();
-		    System.out.println("What are you selling this stock for?");
-		    sellingPrice = input2.nextDouble();
+		Scanner input3 = new Scanner(System.in);
+		while (lV == 0) {
+		System.out.println("What company did you buy this stock from?");
+		System.out.println("Press 'Help' for available options");
+		companyDecision = input2.nextLine();
+		if (companyDecision.equalsIgnoreCase("Apple")) {
+			stockPrice = 279.50;
+			lV = 1;
+		}
+		if (companyDecision.equalsIgnoreCase("CVS")) {
+			stockPrice = 74.20;
+			lV = 1;
+		}
+		if (companyDecision.equalsIgnoreCase("Microsoft")) {
+			stockPrice = 154.89;
+			lV = 1;
+		}
+		if (companyDecision.equalsIgnoreCase("Disney")) {
+			stockPrice = 148.08;
+			lV = 1;
+		}
+		if (companyDecision.equalsIgnoreCase("McDonald's")) {
+			stockPrice = 198.16;
+			lV = 1;
+		}
+		if (companyDecision.equalsIgnoreCase("NVIDIA")) {
+			stockPrice = 227.00;
+			lV = 1;
+		}
+		if (companyDecision.equalsIgnoreCase("Visa")) {
+			stockPrice = 185.51;
+			lV = 1;
+		}
+		if (companyDecision.equalsIgnoreCase("AT&T")) {
+			stockPrice = 38.64;
+			lV = 1;
+		}
+		if (companyDecision.equalsIgnoreCase("Verizon")) {
+			stockPrice = 61.45;
+			lV = 1;
+		}
+		if (companyDecision.equalsIgnoreCase("FedEx")) {
+			stockPrice = 164.25;
+			lV = 1;
+		}
+		if (companyDecision.equalsIgnoreCase("Help")) {
+			System.out.println("CVS");
+			System.out.println("Apple");
+			System.out.println("Microsoft");
+			System.out.println("Disney");
+			System.out.println("McDonald's");
+			System.out.println("NVIDIA");
+			System.out.println("Visa");
+			System.out.println("AT&T");
+			System.out.println("Verizon");
+			System.out.println("FedEx");
+		}
+		}
+			System.out.println("How much are you selling this stock for?");
+			sellingPrice = input2.nextDouble();
 		    System.out.println("What year did you buy this stock?");
 		    WhenBuyYear = input2.nextDouble();
 		    System.out.println("What month did you buy this stock?");
@@ -135,89 +322,156 @@ class SellBonds{
 		    WhenSellYear = input2.nextDouble();
 		    System.out.println("When month did you sell this stock?");
 		    WhenSellMonth = input2.nextDouble();
+		    while (lV == 1) {
 		    System.out.println("Where did you buy the stock from?");
-			countryDecision = input2.nextLine();
+			countryDecision = input3.nextLine();
 				if (countryDecision.equalsIgnoreCase("Europe")) {
-					ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-					ForeignPrice = ForeignCurrencyExchange.EuropeExchange(sellingPrice);
+					InvestmentCountries FEC = new InvestmentCountries();{
+					ForeignPrice = InvestmentCountries.RecieveEuropeExchange(sellingPrice);
+					lV = 2;
 					}
 				}
 				if (countryDecision.equalsIgnoreCase("Asia")) {
-					ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-					ForeignPrice = ForeignCurrencyExchange.AsiaExchange(sellingPrice);
+					InvestmentCountries FEC = new InvestmentCountries();{
+					ForeignPrice = InvestmentCountries.RecieveAsiaExchange(sellingPrice);
+					lV = 2;
 					}
 				}
 				if (countryDecision.equalsIgnoreCase("Australia")) {
-					ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-					ForeignPrice = ForeignCurrencyExchange.AustraliaExchange(sellingPrice);
+					InvestmentCountries FEC = new InvestmentCountries();{
+					ForeignPrice = InvestmentCountries.RecieveAustraliaExchange(sellingPrice);
+					lV = 2;
 					}
 				}
 				if (countryDecision.equalsIgnoreCase("Russia")) {
-					ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-					ForeignPrice = ForeignCurrencyExchange.RussiaExchange(sellingPrice);
+					InvestmentCountries FEC = new InvestmentCountries();{
+					ForeignPrice = InvestmentCountries.RecieveRussiaExchange(sellingPrice);
+					lV = 2;
 					}
 				}
 				if (countryDecision.equalsIgnoreCase("Britain")) {
-					ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-					ForeignPrice = ForeignCurrencyExchange.BritishExchange(sellingPrice);
+					InvestmentCountries FEC = new InvestmentCountries();{
+					ForeignPrice = InvestmentCountries.RecieveBritishExchange(sellingPrice);
+					lV = 2;
 					}
 				}
 				if (countryDecision.equalsIgnoreCase("China")) {
-					ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-					ForeignPrice = ForeignCurrencyExchange.ChinaExchange(sellingPrice);
+					InvestmentCountries FEC = new InvestmentCountries();{
+					ForeignPrice = InvestmentCountries.RecieveChinaExchange(sellingPrice);
+					lV = 2;
 					}
 				}
 				if (countryDecision.equalsIgnoreCase("Africa")) {
-					ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-					ForeignPrice = ForeignCurrencyExchange.AfricaExchange(sellingPrice);
+					InvestmentCountries FEC = new InvestmentCountries();{
+					ForeignPrice = InvestmentCountries.RecieveAfricaExchange(sellingPrice);
+					lV = 2;
 					}
 				}
 				if (countryDecision.equalsIgnoreCase("Albania")) {
-					ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-					ForeignPrice = ForeignCurrencyExchange.AlbaniaExchange(sellingPrice);
+					InvestmentCountries FEC = new InvestmentCountries();{
+					ForeignPrice = InvestmentCountries.RecieveAlbaniaExchange(sellingPrice);
+					lV = 2;
 					}
 				}
 				if (countryDecision.equalsIgnoreCase("Mexico")) {
-					ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-					ForeignPrice = ForeignCurrencyExchange.MexicoExchange(sellingPrice);
+					InvestmentCountries FEC = new InvestmentCountries();{
+					ForeignPrice = InvestmentCountries.RecieveMexicoExchange(sellingPrice);
+					lV = 2;
 					}
 				}
 				if (countryDecision.equalsIgnoreCase("Korea")) {
-					ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-					ForeignPrice = ForeignCurrencyExchange.KoreaExchange(sellingPrice);
+					InvestmentCountries FEC = new InvestmentCountries();{
+					ForeignPrice = InvestmentCountries.RecieveKoreaExchange(sellingPrice);
+					lV = 2;
 					}
 				}
 				if (countryDecision.equalsIgnoreCase("Norway")) {
-					ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-					ForeignPrice = ForeignCurrencyExchange.NorwayExchange(sellingPrice);
+					InvestmentCountries FEC = new InvestmentCountries();{
+					ForeignPrice = InvestmentCountries.RecieveNorwayExchange(sellingPrice);
+					lV = 2;
 					}
 				}
 				if (countryDecision.equalsIgnoreCase("Romania")) {
-					ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-					ForeignPrice = ForeignCurrencyExchange.RomaniaExchange(sellingPrice);
-					}
+					ForeignPrice = InvestmentCountries.RecieveRomaniaExchange(sellingPrice);
+					lV = 2;
 				}
 				if (countryDecision.equalsIgnoreCase("Poland")) {
-					ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-					ForeignPrice = ForeignCurrencyExchange.PolandExchange(sellingPrice);
+					InvestmentCountries FEC = new InvestmentCountries();{
+					ForeignPrice = InvestmentCountries.RecievePolandExchange(sellingPrice);
+					lV = 2;
 					}
 				}
 				if (countryDecision.equalsIgnoreCase("Japan")) {
-					ForeignCurrencyExchange FEC = new ForeignCurrencyExchange();{
-					ForeignPrice = ForeignCurrencyExchange.JapanExchange(sellingPrice);
-					}
+					InvestmentCountries FEC = new InvestmentCountries();{
+					ForeignPrice = InvestmentCountries.RecieveJapanExchange(sellingPrice);
+					lV = 2;
+					}		
+				}
+				if (countryDecision.equalsIgnoreCase("Saudi Arabia")) {
+					InvestmentCountries FEC = new InvestmentCountries();{
+					ForeignPrice = InvestmentCountries.RecieveSaudiArabiaExchange(sellingPrice);
+					lV = 2;
+					}		
+				}
+				if (countryDecision.equalsIgnoreCase("United Arab Emirates")) {
+					InvestmentCountries FEC = new InvestmentCountries();{
+					ForeignPrice = InvestmentCountries.RecieveUAEExchange(sellingPrice);
+					lV = 2;
+					}		
+				}
+				if (countryDecision.equalsIgnoreCase("Vietnam")) {
+					InvestmentCountries FEC = new InvestmentCountries();{
+					ForeignPrice = InvestmentCountries.RecieveVietnamExchange(sellingPrice);
+					lV = 2;
+					}		
+				}
+				if (countryDecision.equalsIgnoreCase("Switzerland")) {
+					InvestmentCountries FEC = new InvestmentCountries();{
+					ForeignPrice = InvestmentCountries.RecieveSwitzerlandExchange(sellingPrice);
+					lV = 2;
+					}		
+				}
+				if (countryDecision.equalsIgnoreCase("Brazil")) {
+					InvestmentCountries FEC = new InvestmentCountries();{
+					ForeignPrice = InvestmentCountries.SendBrazilExchange(sellingPrice);
+					lV = 2;
+					}		
 				}
 				if (countryDecision.equalsIgnoreCase("USA")) {
+					lV = 2;
 				}
-		    SellBonds.CapitalGainsTax(buyingPrice, sellingPrice, WhenBuyMonth, WhenSellMonth, WhenBuyYear, WhenSellYear);
+				if (countryDecision.equalsIgnoreCase("Help")) {
+					System.out.println("Australia");
+					System.out.println("Britain");
+					System.out.println("China");
+					System.out.println("Russia");
+					System.out.println("Albania");
+					System.out.println("Brazil");
+					System.out.println("Japan");
+					System.out.println("Korea");
+					System.out.println("Mexico");
+					System.out.println("Norway");
+					System.out.println("Poland");
+					System.out.println("Romania");
+					System.out.println("Switzerland");
+					System.out.println("United Arab Emirates");
+					System.out.println("Turkey");
+					System.out.println("Vietnam");
+					System.out.println("Saudi Arabia");
+					System.out.println("Europe");
+					System.out.println("Asia");
+					System.out.println("Africa");
+					System.out.println("USA - Default");
+				}
+		    }
+		    SellBonds.CapitalGainsTax(stockPrice, sellingPrice, WhenBuyMonth, WhenSellMonth, WhenBuyYear, WhenSellYear);
 	}
-	
-    public static void CapitalGainsTax(double buyingPrice, double sellingPrice, double WhenBuyMonth, double WhenSellMonth, double WhenBuyYear, double WhenSellYear)
+    public static void CapitalGainsTax(double stockPrice, double sellingPrice, double WhenBuyMonth, double WhenSellMonth, double WhenBuyYear, double WhenSellYear)
     {
     if(WhenSellYear == WhenBuyYear) {
     	double total = WhenSellMonth - WhenBuyMonth;
-    	double earlyTax = buyingPrice - sellingPrice * .32;
-    	double lateTax = buyingPrice - sellingPrice * .18;
+    	double earlyTax = stockPrice - sellingPrice * .32;
+    	double lateTax = stockPrice - sellingPrice * .18;
     	if(total > 0 || total < 0) {
     		System.out.println(lateTax);
     	}
@@ -227,77 +481,15 @@ class SellBonds{
 }
 
     if(WhenSellYear > WhenBuyYear) {
-    	double earlyTax = buyingPrice - sellingPrice * .32;
-    	double lateTax = buyingPrice - sellingPrice * .18;
+    	double earlyTax = stockPrice - sellingPrice * .32;
+    	double lateTax = stockPrice - sellingPrice * .18;
     	System.out.println(lateTax);
     }
-    if(WhenSellYear > WhenBuyYear) {
-    	double earlyTax = buyingPrice - sellingPrice * .32;
-    	double lateTax = buyingPrice - sellingPrice * .18;
+    if(WhenSellYear < WhenBuyYear) {
+    	double earlyTax = stockPrice - sellingPrice * .32;
+    	double lateTax = stockPrice - sellingPrice * .18;
     	System.out.println(earlyTax);
     }
 }
 }
-class ForeignCurrencyExchange
-{
-	public static double AustraliaExchange(double DollarAmount)
-    {
-        return DollarAmount * 1.45;
-    }
-    public static double BritishExchange(double DollarAmount)
-    {
-        return DollarAmount * 0.76;
-    }
-    public static double ChinaExchange(double DollarAmount)
-    {
-        return DollarAmount * 7.05;
-    }
-    public static double RussiaExchange(double DollarAmount)
-    {
-        return DollarAmount * 63;
-    }
-    public static double AlbaniaExchange(double DollarAmount)
-    {
-        return DollarAmount * 109.55;
-    }
-    public static double BrazilExchange(double DollarAmount)
-    {
-        return DollarAmount * 4.10;
-    }
-    public static double JapanExchange(double DollarAmount)
-    {
-        return DollarAmount * 109.35;
-    }
-    public static double KoreaExchange(double DollarAmount)
-    {
-        return DollarAmount * 1175.17;
-    }
-    public static double MexicoExchange(double DollarAmount)
-    {
-        return DollarAmount * 19.03;
-    }
-    public static double NorwayExchange(double DollarAmount)
-    {
-        return DollarAmount * 9.02;
-    }
-    public static double PolandExchange(double DollarAmount)
-    {
-        return DollarAmount * 3.83;
-    }
-    public static double RomaniaExchange(double DollarAmount)
-    {
-        return DollarAmount * 4.28;
-    }
-    public static double EuropeExchange(double DollarAmount)
-    {
-        return DollarAmount * 0.90;
-    }
-    public static double AsiaExchange(double DollarAmount)
-    {
-        return DollarAmount * 71;
-    }
-    public static double AfricaExchange(double DollarAmount)
-    {
-        return DollarAmount * 15;
-    }
-}
+
