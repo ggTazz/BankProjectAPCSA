@@ -93,8 +93,7 @@ public class Bank{
 				System.out.println("Press Help for Commands.");
 			}
 			if (page.equalsIgnoreCase("Loan")) {
-				LoanDepartmentBank LDP = new LoanDepartmentBank();
-			
+				LoanDepartmentTest.launcherLDT();
 				System.out.println("Please type the name of the page you wish to go to.");
 				System.out.print("The time is ");
 				Clock.clocck();
