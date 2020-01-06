@@ -1,10 +1,11 @@
+package loandepartmentpackage;
 import java.util.Scanner;
 
 public class LoanDepartmentBank {
+
 	  //start of class
-	 
-	 
 	 public void LoanDepartment()  //all will be 0
+
 	 {
 	  myRate = 0;
 	  myTime = 0;
@@ -14,13 +15,13 @@ public class LoanDepartmentBank {
 	  myStudentLoan = 0;
 	  myCarLoan = 0;
 	  myPersonalLoan = 0;
+	  
 	 }
 
-	 
-	 
 	 public LoanDepartmentBank(int rate, int time, double intrate, int mortgage, int student, int car, int personal, int creditscore)
+
 	 {
-	  
+
 	  myRate  = rate;
 	  myTime = time;
 	  myInterestRate = intrate;
@@ -30,9 +31,9 @@ public class LoanDepartmentBank {
 	  myPersonalLoan = personal;
 	  myCreditScore = creditscore;
 	 }
-	 
-	 
+
 	 //start getters
+
 	 public int getrate()
 	 {
 	  return myRate;
@@ -67,10 +68,9 @@ public class LoanDepartmentBank {
 	 }
 	 
 	// end getters 
-	 
-	 
+
 	 //start setters 
-	 
+
 	 public void setrate(int rate)
 	 {
 	  myRate = rate;
@@ -103,54 +103,61 @@ public class LoanDepartmentBank {
 	 {
 	  myCreditScore = creditscore;
 	 }
+	 public 
 	
 	
 	 //end setters
-	 
-	 
+ 
 	 //start functions
+	 
+	 
+	 
+	 
+	 
+
 	 public static void MortLoan() {
+
 		 System.out.println("How many years do you expect it will take you to pay your home off?\n(1) 15 years\n(2) 30 years");
+
 		 int Ans = Bhivam.nextInt();
-		 
+
 		 if (Ans == 1) {
 			 myTime = 15;
 			 System.out.println("What is your credit score? Enter an answer between 300 and 850");
-			 
 			 CredScore = Bhivam.nextInt();
 			 
-			 if (CredScore >= 800 && CredScore < 851) {
+			 	if (CredScore >= 800 && CredScore < 851) {
 				 System.out.println("You have great credit. We will offer you a 4% interest rate on your loan.\nNow input how much you would like for your mortgage. Most we can offer is 5 million");
 				 myInterestRate = 0.04;
 				 myMortgage = Bhivam.nextInt();
 				 System.out.println("We can grant you your loan of $" + myMortgage + ". Have a nice day");
-				 
 			}
-		 
 			 else if (CredScore >= 650 && CredScore < 800) {
+
 				 System.out.println("You have good credit. We will offer you a 5.5% interest rate on your loan.\nNow input how much you would like for your mortgage. Most we can offer is 5 million");
 				 myInterestRate = 0.055;
 				 myMortgage = Bhivam.nextInt();
 				 System.out.println("We can grant you your loan of $" + myMortgage + ". Have a nice day.");
 			 }
 			 else if (CredScore >= 300 && CredScore < 650) {
-				 System.out.println("Sorry your credit score is too low and we wont provide a loan.");}
+				 System.out.println("Sorry your credit score is too low and we wont provide a loan.");
+				 
+			 }
 		 
-		 }
+
 		 else if (Ans == 2) {
 			 myTime = 30;
 			 System.out.println("What is your credit score? Enter an answer between 300 and 850");
-			 
+
 			 CredScore = Bhivam.nextInt();
-			 
+
 			 if (CredScore >= 800 && CredScore < 851) {
 				 System.out.println("You have great credit. We will offer you a 4% interest rate on your loan.\nNow input how much you would like for your mortgage. Most we can offer is 5 million");
 				 myInterestRate = 0.04;
 				 myMortgage = Bhivam.nextInt();
 				 System.out.println("We can grant you your loan of $" + myMortgage + ". Have a nice day");
-				 
+	
 			}
-		 
 			 else if (CredScore >= 650 && CredScore < 800) {
 				 System.out.println("You have good credit. We will offer you a 5.5% interest rate on your loan.\nNow input how much you would like for your mortgage. Most we can offer is 5 million");
 				 myInterestRate = 0.055;
@@ -159,15 +166,13 @@ public class LoanDepartmentBank {
 			 }
 			 else if (CredScore >= 300 && CredScore < 650) {
 				 System.out.println("Sorry your credit score is too low and we wont provide a loan.");
-			 }
-		 
-	} 
-		 
+		 }
+		
+	}
+
 			 
 			 
 			 
-	 }
-	 
 	 public static void CarLoan() {
 		 System.out.println("We offer plans to pay back your car over 5 years. How much would you like to loan? Max we offer is 500 thousand.");
 		 myTime = 5;
@@ -179,19 +184,22 @@ public class LoanDepartmentBank {
 			 myInterestRate = 0.02;
 			 System.out.println("We can grant you your loan of $" + myCarLoan + ". Have a nice day");
 		 }
-		 
+
 		 else if (CredScore >= 650 && CredScore < 800) {
 			 System.out.println("You have good credit. We will offer you a 4.2% interest rate on your loan.\nNow input how much you would like for your mortgage. Most we can offer is 5 million");
 			 myInterestRate = 0.042;
 			 myMortgage = Bhivam.nextInt();
 			 System.out.println("We can grant you your loan of $" + myCarLoan + ". Have a nice day");
 		 }
-		 
 		 else if (CredScore >= 300 && CredScore < 650) {
 			 System.out.println("Sorry your credit score is too low and we wont provide a loan.");
 		 }
- }
+ } 
 	 
+	 
+	 
+	 
+
 	 public static void StudLoan() {
 		 System.out.println("We offer plans to pay back your student loan over 15 years. How much would you like to loan? Max we offer is 500 thousand.");
 		 myTime = 15;
@@ -203,19 +211,23 @@ public class LoanDepartmentBank {
 			 myInterestRate = 0.05;
 			 System.out.println("We can grant you your loan of $" + myStudentLoan + ". Have a nice day");
 		 }
-		 
 		 else if (CredScore >= 650 && CredScore < 800) {
+
 			 System.out.println("You have good credit. We will offer you a 7% interest rate on your loan.\nNow input how much you would like for your mortgage. Most we can offer is 5 million");
 			 myInterestRate = 0.07;
 			 myMortgage = Bhivam.nextInt();
 			 System.out.println("We can grant you your loan of $" + myCarLoan + ". Have a nice day");
 		 }
-		 
+		
 		 else if (CredScore >= 300 && CredScore < 650) {
 			 System.out.println("Sorry your credit score is too low and we wont provide a loan.");
 		 }
  }
 		 
+	 
+	 
+	 
+	 
 	public static void myPerLoan() {
 		System.out.println("We offer personal loans for any purpose of up to 100 thousand. How much would you like?");
 		myPersonalLoan = Bhivam.nextInt();
@@ -227,33 +239,87 @@ public class LoanDepartmentBank {
 			 System.out.println("You have great credit. We will offer you a 11% interest rate on your loan.");
 			 myInterestRate = 0.11;
 			 System.out.println("We can grant you your loan of $" + myPersonalLoan + ". Have a nice day");
+
 		 }
-		 
 		 else if (CredScore >= 650 && CredScore < 800) {
 			 System.out.println("You have good credit. We will offer you a 20% interest rate on your loan.\nNow input how much you would like for your mortgage. Most we can offer is 5 million");
 			 myInterestRate = 0.20;
 			 myMortgage = Bhivam.nextInt();
 			 System.out.println("We can grant you your loan of $" + myPersonalLoan + ". Have a nice day");
 		 }
-		 
 		 else if (CredScore >= 300 && CredScore < 650) {
 			 System.out.println("Sorry your credit score is too low and we wont provide a loan.");
+
 		 }
+
+
+	}
+	
+	
+	
+	//accounts will be 123 or 321
+	public static void storeLoanMoney() {
+		System.out.println("Please enter your loan account number.");
+		
+		int enteredaccnumloan = Bhivam.nextInt();
 		
 		
+		if (enteredaccnumloan == 123) {
+			System.out.println("You have successfully signed in.  Please select which bank-provided loan amount you would like to add to your account.");
+			String wantsmortgageadded = Bhivam.nextLine();
+			String wantscarloanadded = Bhivam.nextLine();
+			String wantsstudentloanadded = Bhivam.nextLine();
+			String wantspersonalloanadded = Bhivam.nextLine();
+			
+			if (wantsmortgageadded.equals("mortgage")) {
+				System.out.print("You have chosen to add the mortgage loan to your loan account. " + myMortgage + " has been added to your account.");
+			}
+				if (wantscarloanadded.equals("car loan")) {
+					System.out.print("You have chosen to add the car loan to your loan account. " + myCarLoan + " has been added to your account.");
+				}
+					if (wantsstudentloanadded.equals("student loan")) {
+						System.out.print("You have chosen to add the student loan to your loan account. " + myStudentLoan + " has been added to your account.");
+					}
+						if (wantspersonalloanadded.equals("personal loan")) {
+							System.out.print("You have chosen to add the persona loan tto your loan account. " + myPersonalLoan + "has been added to your account");
+						}
+		
+			
+			System.out.print("The amount of " + myMortgage + " for your mortgage has been added your account.  Have a nice day.");
+			System.out.print("The amount of " + myCarLoan + " for yor car loan has been added to your account.  Have a nice day.");
+			System.out.print("The amount of " + myStudentLoan + " for your student loan has been added to your account.  Have a nice day.");
+			System.out.print("The amount of " + myPersonalLoan + " for your personal loan has been added to your account.  Have a nice day.");
+		}
+		
+		if (enteredaccnumloan == 321) {
+			
+		}
+			if (wantsmortgageadded.equals("mortgage")) {
+				System.out.print("You have chosen to add the mortgage loan to your loan account. " + myMortgage + " has been added to your account.");
+			}
+				if (wantscarloanadded.equals("car loan")) {
+					System.out.print("You have chosen to add the car loan to your loan account. " + myCarLoan + " has been added to your account.");
+				}
+					if (wantsstudentloanadded.equals("student loan")) {
+						System.out.print("You have chosen to add the student loan to your loan account. " + myStudentLoan + " has been added to your account.");
+					}
+						if (wantspersonalloanadded.equals("personal loan")) {
+							System.out.print("You have chosen to add the persona loan tto your loan account. " + myPersonalLoan + "has been added to your account");
+						}
+	}
+			System.out.print("The amount of " + myMortgage + " for your mortgage has been added your account.  Have a nice day.");
+			System.out.print("The amount of " + myCarLoan + " for yor car loan has been added to your account.  Have a nice day.");
+			System.out.print("The amount of " + myStudentLoan + " for your student loan has been added to your account.  Have a nice day.");
+			System.out.print("The amount of " + myPersonalLoan + " for your personal loan has been added to your account.  Have a nice day.");
+		}
 		
 	}
-		 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
+
 	 //end of functions
-	
+
+
 	//start of instance variables 
+
 	public static int myRate;
 	public  static int myTime;
 	public static double myInterestRate;							
@@ -265,7 +331,15 @@ public class LoanDepartmentBank {
 	public static int CredScore;
 	public static String Shivam;
 	public static Scanner Bhivam = new Scanner(System.in);
+	public static String wantsmortgageadded = Bhivam.nextLine();
+	public static String wantscarloanadded  = Bhivam.nextLine();
+	public static String wantsstudentloanadded  = Bhivam.nextLine();
+	public static String wantspersonalloanadded  = Bhivam.nextLine();
+	
+
 	// end instance variables
+
 	}
+
 	//end of class;
 
