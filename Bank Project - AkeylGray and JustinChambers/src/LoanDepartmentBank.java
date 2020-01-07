@@ -240,8 +240,6 @@ public class LoanDepartmentBank {
 			 System.out.println("Sorry your credit score is too low and we wont provide a loan.");
 		 }
 		
-		
-		
 	}
 		 
 	 
