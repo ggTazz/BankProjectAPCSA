@@ -1,0 +1,11 @@
+//separated with a ", "
+
+FirstName/LastName/Address/Birthday month,date,year/account#/pin number/username/password
+
+David Ten, 21 Oaks Court, 11/10/2000, 111-123-1999, 0001, davidtenrocks, password123
+Hisham Shafi, 22 Oaks Court, 12/8/2006, 111-124-1999, 0002, Hishambadatkrunker, Itstrue
+Tazz Liquifier, 23 Oaks Court, 1/1/2000, 111-125-1999, 0003, KFCworker, fingerlickin
+John Smith, 2323 Washinton Lane, 8/9/1999, 111-126-1999, 0004, DoctorWho, Exterminate101
+Wa Ge, 1115 Left Lane, 9/12/2005, 111-127-1999, 0005, Idotu, passwordddd
+Zahir Chan, 74 Glenn Oaks Court, 7/15/2003, 111-128-1999, 0006, ganondork, punchu
+

@@ -1,0 +1,53 @@
+637492, Mo, Bamba, 10/14/1980, 132-50-3907, $12 (Hourly), Bank-Teller, Monday to Friday;
+
+815462, Jones, Baker, 01/14/1975, 158-09-3468, $12 (Hourly), Bank-Teller, Monday to Friday;
+
+173459, Mary, Susan, 06/14/1995, 120-45-7589, $12 (Hourly), Bank-Teller, Monday to Wednesday;
+
+357098, Faith, Mehh, 04/24/1988, 129-45-0923, $12 (Hourly), Bank-Teller, Monday to Saturday;
+
+732893, Liam, Calos, 07/24/1986, 129-45-0923, $12 (Hourly), Bank-Teller, Monday to Saturday;
+
+940357, Baljeet, Patel, 12/5/1987, 189-45-3766, $66000, General-Manager, Monday to Saturday;
+
+860945, Lucy, DeMaro, 04/13/1991, 456-23-1204, $47000, Assistant-Manger, Monday to Saturday;
+
+246786, Murphy, Khan, 10/31/1988, 126-95-6589, $41000, Loan-Officer, Wednesday to Friday;
+
+289382, Daniella, Broccoli, 03/12/1979, 546-27-4689, $41000, Loan-Officer, Wednesday to Friday;
+
+935715, Phineas, Ferb, 06/26/1997, 196-45-0954, $41000, Loan-Officer, Wednesday to Friday;
+
+356190, Dan, Rogers, 07/17/1995, 121-09-6379, $41000, Loan-Officer, Wednesday to Friday;
+
+283780, Danny, Fred, 01/02/1999, 123-63-3738, $76000, Financial-analyst, Monday to Friday;
+
+758928, Gianna, Morgan, 02/15/1970, 192-39-3457, $76000, Financial-analyst, Monday to Friday;
+
+370972, Grace, Tella, 07/12/1998, 237-27-9221, $76000, Financial-analyst, Monday to Friday;
+
+203078, Heem, Ali, 11/13/1989, 902-12-8995, $76000, Financial-analyst, Monday to Friday;
+
+378257, Kevin, James, 09/12/1991, 128-43-2787, $76000, Financial-analyst, Monday to Friday;
+
+298309, Sam, Gon, 04/22/1988, 146-25-3527, $11 (Hourly), Security-Guard, Monday to Friday;
+
+485492, Alex, Morgan, 10/01/1996, 459-51-5648, $11 (Hourly), Security-Guard, Monday to Friday;
+
+498758, Patrick, Star, 12/04/1981, 548-45-1679, $11 (Hourly), Security-Guard, Monday to Friday;
+
+926478, Shaq, O'Neil, 09/17/1987, 489-51-1841, $11 (Hourly), Security-Guard, Monday to Friday;
+
+102680, James, Charles, 08/13/1985, 451-78-1978, $11 (Hourly), Security-Guard, Monday to Friday;
+
+387478, Jack, Randy, 09/21/1995, 565-48-4569, $11 (Hourly), Security-Guard, Monday to Friday;
+
+397558, Ronald, Stewie, 02/12/1990, 104-33-6789, $63000, Accountant, Monday to Wednesday;
+
+209867, Jason, Lincoln, 07/24/1985, 118-34-5634, $63000, Accountant, Monday to Friday;
+
+149020, Sara, Smith, 11/14/1992, 194-17-5204, $63000, Accountant, Monday to Saturday;
+
+189563, Juan, Rodriguez, 11/30/1988, 142-48-9548, $63000, Accountant, Monday to Friday;
+
+294936, Lucas, Lillard, 01/02/19904, 123-234-5447, $63000, Accountant, Monday to Saturday;

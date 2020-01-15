@@ -1,0 +1,43 @@
+637492 Mo Bamba 10/14/1980 132-50-3907 $12 Bank-Teller Mon-Fri end
+
+815462 Jones Baker 01/14/75 158-09-3468 $12 Bank-Teller Mon-Fri end
+
+173459 Mary Susan 06/14/1995 120-45-7589 $12 Bank-Teller Mon-Wed end
+
+357098 Faith Mehh 04/24/1988 129-45-0923 $12 Bank-Teller Mon-Sat end
+
+732893 Liam Calos 07/24/1986 129-45-0923 $12 Bank-Teller Mon-Sat end
+
+940357 Baljeet Patel 12/5/1987 189-45-3766 $66,000 General-Manager Mon-Sat end
+
+860945 Lucy DeMaro 04/13/1991 456-23-1204 $47,000 Assisant-Manger Mon-Sat end
+
+Murphy Khan 246786 10/31/1988 126-95-6589 $41,000 Loan-Officer Wed-Fri end
+
+Daniella Broccoli 289382 03/12/1979 546-27-4689 $41,000 Loan-Officer Wed-Fri end
+
+Phineas Ferb 935715 06/26/1997 196-45-0954 $41,000 Loan-Officer Wed-Fri end
+
+Dan Rogers 356190 07/17/1995 121-09-6379 $41,000 Loan-Officer Wed-Fri end
+
+Danny Fred 283780 01/02/1999 1293-63-3738 76,000 Financial-analyst Mon-Fri end
+
+Gianna Morgan 758928 02/15/1970 192-39-3457 76,000 Financial-analyst Mon-Fri end
+
+Grace Tella  370972 07/12/1998 237-27-9221 76,000 Financial-analyst Mon-Fri end
+
+Heem Ali 203078 11/13/1989 902-12-8995 76,000 Financial-analyst Mon-Fri end
+
+Kevin  James  378257 09/12/1991 128-43-2787 76,000 Financial-analyst Mon-Fri end
+
+Sam Gon 298309 04/22/1988 146-25-3527 $11 Security-Guard Mon-Fri
+
+Alex Morgan 485492 10/01/1996 146-25-3527 $11 Security-Guard Mon-Fri
+
+Patrick Star 498758 12/04/1981 146-25-3527 $11 Security-Guard Mon-Fri
+
+Shaq O'Neil 926478 09/17/1987 146-25-3527 $11 Security-Guard Mon-Fri
+
+James Charles 102680 08/13/1985 146-25-3527 $11 Security-Guard Mon-Fri
+
+Jack Randy 387478 09/21/1995 146-25-3527 $11 Security-Guard Mon-Fri
